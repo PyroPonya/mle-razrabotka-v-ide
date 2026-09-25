@@ -20,6 +20,8 @@ class DataFrameReporter:
         print('Доля дубликатов:', format(
             duplicates / df.shape[0], self.percent_format))
 
+        print(df.describe(include='all' if self.include_all else None))
+
         print('Количество пропусков:', df.isna().sum().sum())
 
         print('Доля пропусков:', format(
